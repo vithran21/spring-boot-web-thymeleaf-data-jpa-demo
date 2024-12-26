@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert Student</title>
+<style type="text/css">
+div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: aqua;
+	flex-direction: column;
+}
+
+form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap:10px;
+	width: 600px;
+	background-color: grey;
+	border: 2px solid green;
+}
+</style>
+</head>
+<body>
+
+	<div>
+		<h2>Student Details</h2>
+		<form action="add-student">
+			<label for="name">Name</label> 
+			<input id="name" name="name"> 
+			<label for="ph">Phone Number</label> 
+			<input id="ph" type="tel" name="number"> 
+			<label for="gender">Gender</label> 
+			<input type="radio" id="gender" name="gender" value="male">Male</input>
+		    <input type="radio" id="gender" name="gender" value="female">Female</input>
+			<label>Marks:</label>
+			<label for="mat">Maths: </label> 
+			<input id="mat" type="number" name="maths"> 
+			<label for="sci">Science: </label> 
+			<input id="sci" type="number" name="science"> 
+			<label for="eng">English:</label> 
+			<input id="eng" type="number" name="english">
+			
+			<button type="submit">Add</button>
+		</form>
+	</div>
+</body>
+</html>

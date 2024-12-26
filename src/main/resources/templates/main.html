@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Student Details</title>
+<style type="text/css">
+	.container,body{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+</style>
+</head>
+<body>
+	<h1>Student Details</h1>
+	<table th:if="${students}">
+		<tbody>
+			<tr>
+				<th>Name</th>
+				<th>Phone No</th>
+				<th>Mathematics</th>
+				<th>Science</th>
+				<th>English</th>
+				<th>Total Marks</th>
+				<th>Percentage</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+			<tr th:each="student:${students}">
+				<td th:text="${student.name}"></td>
+				<td th:text="${student.number}"></td>
+				<td th:text="${student.maths}"></td>
+				<td th:text="${student.science}"></td>
+				<td th:text="${student.english}"></td>
+				<td th:text="${(student.maths+student.science+student.english)}"></td>
+				<td th:text="${((student.maths+student.science+student.english)*100)/300}"></td>
+				<td><a><button>Edit</button></a></td>
+				<td><a><button>Delete</button></a></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<br><br>
+	
+	<h2 th:if="${success}" th:text="${success}"></h2>
+	<br>
+	<div class="container">
+		<a href="insert"><button>Add Student</button></a>
+	</div>
+</body>
+</html>
